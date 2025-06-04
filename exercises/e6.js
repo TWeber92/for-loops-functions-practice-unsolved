@@ -4,8 +4,16 @@
 // getClientWithNoMoney(bankAccounts) => ['Kevin', 'Jon']
 
 export function getClientWithNoMoney(array) {
-  // Your code goes here...
-
+  const names = [];
+  for (let account of array) {
+    if (account.balance === 0) {
+      names.push(account.name);
+    }
+  }
+  return names;
+  // return array
+  //   .filter((account) => account.balance === 0)
+  //   .map((account) => account.name);
 }
 
 // === TEST YOURSELF ===

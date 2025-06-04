@@ -5,8 +5,16 @@
 // getAllWithdrawals(bankAccounts) => [3432, 0, 43242.34, 0, 23432]
 
 export function getAllWithdrawals(array) {
-  // Your code goes here...
-
+  const accWithdrawls = [];
+  for (let account of array) {
+    if (!account.withdrawals) {
+      accWithdrawls.push(0);
+    } else {
+      let accountTotal = account.withdrawals.reduce((acc, val) => acc + val, 0);
+      accWithdrawls.push(accountTotal);
+    }
+  }
+  return accWithdrawls;
 }
 
 // === TEST YOURSELF ===

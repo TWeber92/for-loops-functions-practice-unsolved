@@ -1,15 +1,18 @@
-
 // EXERCISE 15
 // Please, read the exercise-info/concat.md to get the initial data of what is the expected result of this exercise.
 // concatArrays(['d', 'r', 'a'], ['f', 'y']) => ['d', 'r', 'a', 'f', 'y']
 // NOTE: You can NOT use the array.concat() method in your code
 
 export function concatArrays(arr1, arr2) {
-  // Your code goes here...
-
+  let twoArr = [];
+  for (let char of arr1) {
+    twoArr.push(char);
+  }
+  for (let char of arr2) {
+    twoArr.push(char);
+  }
+  return twoArr;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-15"

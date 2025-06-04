@@ -1,15 +1,13 @@
-
 // EXERCISE 9
 // Return an array of bank accounts with balance over $100
 // Array example: bankAccounts in /data/data.js
 // getClientsWithBalanceOverOneHundred(array) => [{ name: 'Name1', balance: 32, ... }, { name: 'Name2', balance: 3523, ... }]
 
 export function getClientsWithBalanceOverOneHundred(array) {
-  // Your code goes here...
-
+  const accountsWHundred = array.filter((account) => account.balance > 100);
+  if (accountsWHundred.length === 0) return [];
+  return accountsWHundred;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-9"
