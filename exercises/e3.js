@@ -8,8 +8,10 @@
  * */
 
 export function getAverage(array) {
-  if (array.length === 0) return 0;
-  const sum = array.reduce((acc, val) => acc + val, 0);
+  let sum = 0;
+  for (let num of array) {
+    sum += num;
+  }
   return sum / array.length;
 }
 
@@ -21,17 +23,13 @@ export function getAverage(array) {
  * */
 
 export function getStringSum(str) {
-  // let sum = 0;
-  // for (let char of str) {
-  //   if (Number.isInteger(Number(char))) {
-  //     sum += Number(char);
-  //   }
-  // }
-  // return sum;
-  return Array.from(str).reduce(
-    (sum, char) => (Number.isInteger(Number(char)) ? sum + Number(char) : sum),
-    0
-  );
+  let sum = 0;
+  for (let char of str) {
+    if (Number.isInteger(Number(char))) {
+      sum += Number(char);
+    }
+  }
+  return sum;
 }
 
 // === TEST YOURSELF ===

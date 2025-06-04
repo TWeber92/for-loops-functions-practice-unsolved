@@ -10,7 +10,10 @@ export function getAllWithdrawals(array) {
     if (!account.withdrawals) {
       accWithdrawls.push(0);
     } else {
-      let accountTotal = account.withdrawals.reduce((acc, val) => acc + val, 0);
+      let accountTotal = 0;
+      for (let withdraw of account.withdrawals) {
+        accountTotal += withdraw;
+      }
       accWithdrawls.push(accountTotal);
     }
   }

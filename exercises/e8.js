@@ -4,7 +4,10 @@
 // getClientWithGreatestBalance(bankAccounts) => [{ name: 'SomeName', balance: 32, ... }]
 
 export function getClientWithGreatestBalance(array) {
-  const accountsWBalance = array.filter((account) => account.balance > 0);
+  const accountsWBalance = [];
+  for (let account of array) {
+    if (account.balance > 0) accountsWBalance.push(account);
+  }
   if (accountsWBalance.length === 0) return [];
   let largestAccount = accountsWBalance[0];
   for (let account of accountsWBalance) {

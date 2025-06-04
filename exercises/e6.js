@@ -11,9 +11,6 @@ export function getClientWithNoMoney(array) {
     }
   }
   return names;
-  // return array
-  //   .filter((account) => account.balance === 0)
-  //   .map((account) => account.name);
 }
 
 // === TEST YOURSELF ===

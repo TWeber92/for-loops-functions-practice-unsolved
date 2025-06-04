@@ -6,12 +6,9 @@
 export function getClientsWithLetterInName(array, letter) {
   const lowerLetter = letter.toLowerCase();
   const namesWLetter = [];
-  const accountsWName = array.filter((account) =>
-    account.name.toLowerCase().includes(lowerLetter)
-  );
-  for (let account of accountsWName) {
-    if (account.name.toLowerCase().includes(lowerLetter)) {
-      namesWLetter.push(account.name);
+  for (let account of array) {
+    for (let char of account.name) {
+      if (char.toLowerCase() === lowerLetter) namesWLetter.push(account.name);
     }
   }
   return namesWLetter;
